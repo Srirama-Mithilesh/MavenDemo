@@ -1,4 +1,4 @@
-FROM tomcat:9-jdk11
-COPY **/*.war /usr/local/tomcat/webapps
-EXPOSE 8888
-CMD ["catalina.sh", "run"]
+FROM eclipse-temurin:11-jre
+WORKDIR /app
+COPY target/*.jar app.jar
+CMD ["java", "-jar", "app.jar"]
